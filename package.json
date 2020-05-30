@@ -1,0 +1,59 @@
+{
+    "name": "pixi-gameobject-demo",
+    "version": "2.3.0",
+    "description": "pixi.js typescript boilerplate",
+    "scripts": {
+        "test": "npx jest",
+        "code-coverage": "jest --coverage",
+        "type-check": "tsc --noEmit",
+        "clean-build": "npx del-cli ./dist",
+        "serve": "parcel ./src/index.html --port=8080 --open ",
+        "build": "npm run type-check & npm run clean-build & parcel build ./src/index.html",
+        "pretty-format": "npx prettier --write src/**/*.ts",
+        "pretty-check": "npx prettier -c ./src/**/*.ts",
+        "lint-check": "npx eslint ./src/**/*.ts",
+        "code-style-check": "npm run lint-check && npm run pretty-check"
+    },
+    "author": "MercurialUroboros",
+    "license": "MIT",
+    "dependencies": {
+        "pixi.js": "^5.2.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.3",
+        "@types/jsdom": "^16.2.3",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.1.0",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "@typescript-eslint/eslint-plugin": "^3.0.1",
+        "@typescript-eslint/parser": "^3.0.1",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^25.5.4",
+        "jest-canvas-mock": "^2.2.0",
+        "jsdom": "^16.2.2",
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-static-files-copy": "^2.3.1",
+        "ts-jest": "^25.5.1",
+        "typescript": "^3.9.3"
+    },
+    "jest": {
+        "transform": {
+            ".(ts|tsx)": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "moduleNameMapper": {
+            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+        },
+        "setupFiles": [
+            "jest-canvas-mock"
+        ]
+    }
+}

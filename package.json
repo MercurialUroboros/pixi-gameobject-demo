@@ -17,6 +17,7 @@
     "author": "MercurialUroboros",
     "license": "MIT",
     "dependencies": {
+        "pixi-gameobject": "^1.0.3",
         "pixi.js": "^5.2.4"
     },
     "devDependencies": {
